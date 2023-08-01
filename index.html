@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es-MX">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Bootstrap CSS -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+		<title>API VIEWER</title>
+	</head>
+	<body>
+		<div class="container-fluid my-3">
+			<div class="row">
+				<div class="col-12">
+					<h1>API TEST</h1>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 mb-3">
+					<label for="url" class="form-label">API URL</label>
+					<div class="row input-group mx-0 mb-3">
+						<span class="input-group-text col-md-auto">https://</span>
+						<input type="text" class="form-control col-md-auto" id="url" placeholder="api.com">
+						<span class="input-group-text col-md-auto">/</span>
+						<input class="form-control col-md-auto" id="path" placeholder="login">
+						<span class="input-group-text col-md-auto">Método</span>
+						<select class="form-select col-md-auto" id="method">
+							<option value="POST">POST</option>
+							<option value="GET">GET</option>
+						</select>
+					</div>
+					<label for="param" class="form-label">AGREGAR PARÁMETROS</label>
+					<div class="row input-group mx-0 mb-3">
+						<span class="input-group-text col-md-auto">Parámetro</span>
+						<input type="text" class="form-control col-md-auto" id="param" placeholder="oauth">
+						<span class="input-group-text col-md-auto">Tipo</span>
+						<select class="form-select col-md-auto" id="type">
+							<option value="text">Texto</option>
+							<option value="file">Archivo</option>
+						</select>
+						<button class="btn btn-primary col-md-auto" id="addParam"><i class="bi bi-plus-lg"></i></button>
+					</div>
+					<label for="param" class="form-label">PARÁMETROS</label>
+					<div data-ui="form"></div>
+					<button class="btn btn-primary col-md-auto d-none" id="sendRequest"><i class="bi bi-send-fill"></i></button>
+				</div>
+				<div class="col-md-6 mb-3 position-relative">
+					<div data-loader="" class="bg-white position-absolute w-100 h-100 start-0 top-0 justify-content-center align-items-center" style="display: none;">
+						<div class="spinner-border text-info" role="status">
+							<span class="visually-hidden">Loading...</span>
+						</div>
+					</div>
+					<label class="form-label">JSON</label>
+					<div class="min-vh-100 border border-dark rounded p-2" id="json-viewer"></div>
+				</div>
+			</div>
+		</div>
+		<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/@textea/json-viewer@3"></script>
+		<script src="./assets/js/main.js"></script>
+	</body>
+</html>
